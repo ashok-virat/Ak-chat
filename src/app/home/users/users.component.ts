@@ -29,30 +29,15 @@ export class UsersComponent implements OnInit {
     this.firstName=Cookie.get('firstName');
     this.lastName=Cookie.get('lastName');
     this.authToken=Cookie.get('authToken');
-    this.getsingleuser();
+
     this.getusers();
-  }
-  public getsingleuser=()=>{
-    let data={
-      userId:this.userId,
-      authToken:this.authToken
-    }
-  this.service.getsingleuser(data).subscribe(
-    data=>{
-      this.userName=`${data.data[0].firstName} ${data.data[0].lastName}`;
-      this.userfirstletter=`${data.data[0].firstName[0]}`;
-      this.status=`${data.data[0].status}`;
-    },
-    err=>{
-      alert('some error occured')
-    }
-  )
   }
 
 
   public getusers=()=>{
     this.service.getusers(this.authToken).subscribe(
       data=>{
+        console.log(data);
         this.users=data.data;
       }
     )

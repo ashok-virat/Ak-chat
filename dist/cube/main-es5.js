@@ -1294,20 +1294,9 @@ var UsersComponent = /** @class */ (function () {
         this.toastr = toastr;
         this.p = 1;
         this.count = 15;
-        this.getsingleuser = function () {
-            var data = {
-                userId: _this.userId
-            };
-            _this.service.getsingleuser(data).subscribe(function (data) {
-                _this.userName = data.data[0].firstName + " " + data.data[0].lastName;
-                _this.userfirstletter = "" + data.data[0].firstName[0];
-                _this.status = "" + data.data[0].status;
-            }, function (err) {
-                alert('some error occured');
-            });
-        };
         this.getusers = function () {
             _this.service.getusers(_this.authToken).subscribe(function (data) {
+                console.log(data);
                 _this.users = data.data;
             });
         };
@@ -1357,7 +1346,6 @@ var UsersComponent = /** @class */ (function () {
         this.firstName = ng2_cookies_ng2_cookies__WEBPACK_IMPORTED_MODULE_4__["Cookie"].get('firstName');
         this.lastName = ng2_cookies_ng2_cookies__WEBPACK_IMPORTED_MODULE_4__["Cookie"].get('lastName');
         this.authToken = ng2_cookies_ng2_cookies__WEBPACK_IMPORTED_MODULE_4__["Cookie"].get('authToken');
-        this.getsingleuser();
         this.getusers();
     };
     UsersComponent.ctorParameters = function () { return [

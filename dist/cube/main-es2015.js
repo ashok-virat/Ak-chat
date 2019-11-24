@@ -1217,20 +1217,9 @@ let UsersComponent = class UsersComponent {
         this.toastr = toastr;
         this.p = 1;
         this.count = 15;
-        this.getsingleuser = () => {
-            let data = {
-                userId: this.userId
-            };
-            this.service.getsingleuser(data).subscribe(data => {
-                this.userName = `${data.data[0].firstName} ${data.data[0].lastName}`;
-                this.userfirstletter = `${data.data[0].firstName[0]}`;
-                this.status = `${data.data[0].status}`;
-            }, err => {
-                alert('some error occured');
-            });
-        };
         this.getusers = () => {
             this.service.getusers(this.authToken).subscribe(data => {
+                console.log(data);
                 this.users = data.data;
             });
         };
@@ -1280,7 +1269,6 @@ let UsersComponent = class UsersComponent {
         this.firstName = ng2_cookies_ng2_cookies__WEBPACK_IMPORTED_MODULE_4__["Cookie"].get('firstName');
         this.lastName = ng2_cookies_ng2_cookies__WEBPACK_IMPORTED_MODULE_4__["Cookie"].get('lastName');
         this.authToken = ng2_cookies_ng2_cookies__WEBPACK_IMPORTED_MODULE_4__["Cookie"].get('authToken');
-        this.getsingleuser();
         this.getusers();
     }
 };
