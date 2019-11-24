@@ -34,7 +34,8 @@ export class UsersComponent implements OnInit {
   }
   public getsingleuser=()=>{
     let data={
-      userId:this.userId
+      userId:this.userId,
+      authToken:this.authToken
     }
   this.service.getsingleuser(data).subscribe(
     data=>{
@@ -53,7 +54,6 @@ export class UsersComponent implements OnInit {
     this.service.getusers(this.authToken).subscribe(
       data=>{
         this.users=data.data;
-       
       }
     )
   }
