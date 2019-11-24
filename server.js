@@ -3,7 +3,7 @@ const express = require('express');
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
-const publicPath = path.join(__dirname, '..', 'cube/dist/cube');
+const publicPath = path.join(__dirname, '..', 'Ak-chat/dist/cube');
 const proxy = require('http-proxy-middleware');
 
 /**
