@@ -1,0 +1,49 @@
+<div class="container-fluid head">
+    <ul>
+        <li><h1 class="header">Akchat</h1></li>
+        <li  [routerLink]="['/home',userId]">Home</li>
+        <li>logout</li>
+    </ul>
+  </div>
+
+
+  <div class="container" *ngIf="reqcount==0">
+    <div class="row">
+      <div class="col-md-12">
+        <h1 style="text-align:center;font-size:18px;font-family: 'Times New Roman', Times, serif;margin-top:20px;">No requests available</h1>
+      </div>
+    </div>
+
+  </div>
+  <div class="container-fluid" >
+     
+      <div class="row">
+          <div class="col-md-4"></div>
+          <div class="col-md-4" *ngIf="reqcount>0">
+        
+                <div class="table-responsive tables">
+                        <table class="table">
+                                <table class="table table-borderless">
+                                        <thead>
+                                                <tr style="text-align:center;text-transform:uppercase;color:red;">
+                                                        <th scope="col"></th>
+                                                  <th scope="col">Name</th>
+                                                  <th scope="col">Accept</th>
+                                                  <th scope="col">Delete</th>
+                                                </tr>
+                                              </thead>
+                                        <tbody>
+                                          <tr *ngFor="let friendreqs of friendreq">
+                                                <p class="userfirst"  >{{friendreqs.senderfirstName[0]}}</p> 
+                                            <td  >{{friendreqs.senderfirstName | uppercase}} {{friendreqs.senderlastName | uppercase}}</td>
+                                            <td ><button class="button" (click)="acceptrequest(friendreqs.friendreqId)">Accept</button></td>
+                                            <td ><button class="button" (click)="deleterequest(friendreqs.friendreqId)">Delete</button></td>
+                                          </tr>
+                                        
+                                        </tbody>
+                                      </table>
+                        </table>
+                      </div>
+          <div class="col-md-4"></div>
+      </div>
+  </div>

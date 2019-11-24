@@ -1,0 +1,43 @@
+<div class="container-fluid head">
+        <ul>
+            <li><h1 class="header">Akchat</h1></li>
+            <li class="standerd" [routerLink]="['/home',userId]">Home</li>
+            <li (click)="logout()">logout</li>
+        </ul>
+      </div>
+
+      <div class="container-fluid" >
+         
+          <div class="row">
+              <div class="col-md-4"></div>
+              <div class="col-md-4">
+            
+                    <div class="table-responsive tables">
+                            <table class="table">
+                                    <table class="table table-borderless">
+                                            <thead>
+                                                    <tr style="text-align:center;text-transform:uppercase;color:red;">
+                                                            <th scope="col"></th>
+                                                      <th scope="col">users</th>
+                                                      <th scope="col">Addfriend</th>
+                                    
+                                                    </tr>
+                                                  </thead>
+                                            <tbody>
+                                              <tr *ngFor="let user of users | paginate: { itemsPerPage: count, currentPage: p }">
+                                                    <p class="userfirst"  *ngIf="user.userId !=userId">{{user.firstName[0]}}</p> 
+                                                <td  *ngIf="user.userId !=userId">{{user.firstName | uppercase}} {{user.lastName | uppercase}}</td>
+                                                <td  *ngIf="user.userId !=userId"><button class="button" (click)="sendrequest(user.userId)">Addfriend</button></td>
+                                              </tr>
+                                            
+                                            </tbody>
+                                          </table>
+                            </table>
+                          </div>
+              <div class="col-md-4"></div>
+          </div>
+      </div>
+      <div class="controller" style="margin-top:20px;float:right">
+          <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        </div>
+    

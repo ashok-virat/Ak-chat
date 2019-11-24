@@ -1,0 +1,246 @@
+@import "~@fortawesome/fontawesome-free/css/all.css";
+
+.head {
+    border-bottom:1px solid black;
+    padding-top:15px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color:black;
+    color:white;
+}
+.header {
+    border-right:1px solid white;
+    width:120px;
+    font-size:30px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color:blue;
+}
+.head ul {
+    display:inline-block;
+}
+.head ul li:hover {
+    color:red
+}
+.head ul li {
+    display: inline-block;
+    margin-left:20px;
+    margin-right:20px;
+    cursor:pointer;
+    text-transform:uppercase;
+    font-family:cursive;
+}
+
+@media only screen and (max-width:495px) {
+   .header{
+       font-size:20px;
+       width:80px;
+   }
+   ul li {
+       margin-top:10px;
+       margin-left:14px;
+       margin-right:0;
+   }
+   .head {
+       padding:0;
+   }
+}
+
+table {
+    margin-top:20px;
+}
+td {
+    color:rgb(253, 180, 192);
+    font-family: cursive ;
+}
+tbody {
+    margin-top:20px;
+    margin-left:auto;
+    margin-right:auto;
+    width:100%;
+    text-align:center;
+}
+
+.button {
+    background-color:white;
+    border:2px solid black;
+    border-radius:20px;
+    padding:8px;
+    font-size:14px;
+}
+.button:hover {
+    background-color:black;
+    color:white;
+}
+.userfirst {
+    text-align: center;
+    background-color:pink;
+    width:40px;
+    padding:10px;
+    text-transform:uppercase;
+    border-radius:70px;
+    color:black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-stretch: condensed;
+    font-style: bold;
+}
+
+
+@media only screen and (max-width:495px) {
+ table {
+      font-size:10px;
+  }
+ .btn-primary {
+     font-size:12px;
+ }  
+ .userfirst {
+    text-align: center;
+    background-color:pink;
+    width:30px;
+    padding:10px;
+    text-transform:uppercase;
+    border-radius:70px;
+    color:black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-stretch: condensed;
+    font-style: bold;
+}
+.button {
+    background-color:white;
+    border:2px solid black;
+    border-radius:20px;
+    padding:8px;
+    font-size:8px;
+}
+
+ }
+ .storyul {
+    margin-top:150px;
+    
+  }
+  .sec{
+      border-right:2px solid black;
+  }
+
+  @media only screen and (max-width:780px) {
+      .sec {
+          border-right:none;
+        }
+        .storyul {
+          margin-top:30px;
+        
+        }
+   }
+  .storyul ul {
+      padding:10px;
+      width:100%;
+  }
+  .storyul ul li {
+   cursor: pointer;
+  width:250px;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top:15px;
+   text-transform:capitalize;
+   list-style-type:square;
+   text-align:center;
+   text-transform:uppercase;
+   font-family: cursive;
+  }
+  .storyul ul li:hover {
+   color:red;
+  }
+  .active {
+    color:red;
+  }
+  .story-card {
+      margin-top:20px;
+      border-radius:10px;
+  }
+  .card-title {
+      text-align:center;
+      text-transform:capitalize;
+      padding:10px;
+      color:rgb(10, 10, 10);
+      font-weight:600;
+  }
+  .card-header {
+      color:rgb(36, 36, 65);
+  }
+  .card-image {
+     
+      padding:10px;
+      margin:10px;
+  }
+  .card-image img {
+      width:100%;
+      border-bottom:1px solid black;
+     
+  }
+  @media only screen and (max-width:780px) {
+    
+      .card-image img {
+          width:100%;
+      }
+         
+      }
+       .date {
+      text-align:right;
+      margin-top:10px;
+      font-size:15px;
+      color:grey;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      }
+      .card-design ul li {
+          display: inline-block;
+          padding:10px;
+          cursor:pointer;
+          list-style-type:none; 
+      
+      }
+      .card-design ul{
+          display: inline-block;
+          cursor:pointer;
+          list-style-type:none;
+      }
+      .fa-heart {
+          color:red;
+          font-size:20px;
+      }
+      .fa-comments {
+          color:green;
+          font-size:20px;
+      }
+      @media only screen and (max-width:495px) {
+          .fa-heart {
+              color:red;
+              font-size:14px;
+          }
+          .fa-comments {
+              color:green;
+              font-size:14px;
+          }
+       }
+       .commentname {
+        text-align:center;
+        text-transform: capitalize;
+       
+    }
+    .watchers {
+        text-transform:uppercase;
+        list-style-type:none;
+        color:red;
+    }
+    .comment {
+        border:1px solid black;
+        padding:10px;
+    }
+    .btn-primary {
+        background-color:white;
+        border:2px solid black;
+        border-radius:20px;
+        color:black
+    }
+    .btn-primary:hover {
+        background-color:black;
+        border:2px solid black;
+       color:white;
+    }

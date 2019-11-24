@@ -1,0 +1,74 @@
+<div class="container-fluid head">
+    <ul>
+        <li><h1 class="header">Akchat</h1></li>
+        <li  [routerLink]="['/home',userId]">Home</li>
+        <li (click)="logout()">logout</li>
+    </ul>
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-3">
+      </div>
+     <div class="col-md-6"> 
+         <!--image section-->
+        <h4 class="name"> {{stories.firstName | uppercase}} {{stories.lastName | uppercase}}</h4>
+      <div class="story-card">
+   
+       <div class="date">{{stories.createdOn | date:'shortDate'}}</div>
+   
+       <div class="card-image">
+           <img src="http://13.235.94.255:4001/{{stories.image}}" alt="">
+       </div>
+       <div class="card-title">{{stories.imageTitle}}</div>
+        <div>
+            <input type="text" name="comment" [(ngModel)]="comment">
+            <label  class="addcomment" for="" (click)="addcomment()">add comment</label>
+        </div>
+       <div class="card-design">
+         <ul>
+           <li style="color:red" (click)="addlike(stories.storyId)"><i class="fas fa-heart"></i>{{stories.likes}}</li>
+           <li style="color:green" data-target="#exampleModal" data-toggle="modal" (click)=" getcomment()"><i class="fas fa-comments"></i></li>
+           <li style="color:red"  [routerLink]="['/home',userId]"><i class="fas fa-backspace"></i></li>
+         </ul>
+       </div>
+      </div></div>
+      <hr>
+      <div class="col-md-3">
+
+        </div>
+    </div>
+  </div>
+
+  <div class="controller" style="margin-top:20px;float:right">
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </div>
+  <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel" style="color:Red;text-transform: uppercase">Comments</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <li *ngIf="commentlength==0">No Comments In This Psot</li>
+        <ul *ngFor="let username of comments | paginate: {itemsPerPage: count, currentPage: p}" class="comment">
+          <li  class="watchers">{{username.senderfirstName}} {{username.senderlastName}} :</li>
+              <div><p class="commentname">{{username.comment}}</p></div>
+          
+        </ul>
+        <div class="controller" style="margin-top:20px;float:right" *ngIf="commentlength>0">
+          <pagination-controls (pageChange)="p = $event" ></pagination-controls>
+        </div>
+      
+      </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+ 
+</div>

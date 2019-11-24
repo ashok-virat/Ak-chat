@@ -1,0 +1,190 @@
+@import "~@fortawesome/fontawesome-free/css/all.css";
+
+.head {
+    border-bottom:1px solid black;
+    padding-top:15px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color:black;
+    color:white;
+}
+.header {
+    border-right:1px solid white;
+    width:120px;
+    font-size:30px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color:blue;
+    cursor: auto;
+}
+.standerd {
+    color:red;
+}
+.head ul {
+    display:inline-block;
+}
+.head ul li {
+    display: inline-block;
+    margin-left:20px;
+    margin-right:20px;
+    cursor:pointer;
+    text-transform: uppercase;
+    font-family:cursive;
+}
+.head ul li:hover {
+    color:red
+}
+
+@media only screen and (max-width:495px) {
+   .header{
+       font-size:20px;
+       width:80px;
+   }
+   ul li {
+       margin-top:10px;
+       margin-left:10px;
+       margin-right:0;
+   }
+   .head {
+       padding:0;
+   }
+}
+
+.storyul ul {
+    padding:10px;
+    width:100%;
+}
+.storyul ul li {
+ cursor: pointer;
+width:250px;
+margin-left:auto;
+margin-right:auto;
+margin-top:15px;
+ text-transform:capitalize;
+ list-style-type:square;
+ text-align:center;
+ text-transform:uppercase;
+ font-family: cursive;
+}
+.storyul ul li:hover {
+ color:red;
+}
+.active {
+  color:red;
+}
+.story-card {
+    margin-top:20px;
+}
+.card-title {
+    text-align:center;
+    text-transform:capitalize;
+    padding:10px;
+    color:rgb(10, 10, 10);
+    font-weight:600;
+}
+.card-header {
+    color:rgb(36, 36, 65);
+}
+.card-image {
+   
+    padding:10px;
+    margin:10px;
+}
+.card-image img {
+    width:100%;
+   
+   
+}
+@media only screen and (max-width:780px) {
+  
+    .card-image img {
+        width:100%;
+    }
+       
+    }
+     .date {
+    text-align:right;
+    margin-top:10px;
+    font-size:15px;
+    color:grey;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+    .card-design ul li {
+        display: inline-block;
+        padding:10px;
+        cursor:pointer;
+        list-style-type:none; 
+    
+    }
+    .card-design ul{
+        display: inline-block;
+        cursor:pointer;
+        list-style-type:none;
+    }
+    .fa-heart {
+        color:red;
+        font-size:20px;
+    }
+    .fa-comments {
+        color:green;
+        font-size:20px;
+    }
+    @media only screen and (max-width:495px) {
+        .fa-heart {
+            color:red;
+            font-size:14px;
+        }
+        .fa-comments {
+            color:green;
+            font-size:14px;
+        }
+        input {
+            width:150px;
+        }
+        .addcomment{
+            color:black;
+            font-family: cursive;
+            padding:10px;
+            color:green;
+            font-size:15px;
+        }
+        .name {
+           font-size:15px;
+        }
+     }
+
+     .addcomment{
+         color:black;
+         font-family: cursive;
+         padding:10px;
+         color:green;
+         cursor: pointer;
+     }
+     .addcomment:hover {
+         color:pink;
+     }
+
+ input {
+         border-radius:20px;
+         border-color:green;
+     }
+     input:focus {
+        outline:0;
+    }
+    .name {
+        margin-top:20px;
+        color:grey;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    .commentname {
+        text-align:center;
+        text-transform: capitalize;
+       
+    }
+    .watchers {
+        text-transform:uppercase;
+        list-style-type:none;
+        color:red;
+    }
+    .comment {
+        border:1px solid black;
+        padding:10px;
+    }

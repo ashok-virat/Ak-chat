@@ -1,0 +1,72 @@
+
+
+
+  <div class="container-fluid chat-box">
+      <div class="row">
+          <div class="back"> <p  [routerLink]="['/friends']" class="home">back</p></div>
+           
+          <div class="col-md-12" class="chat-left">
+               
+              <ul>
+                  <li class="userfirst" (click)="sendmessage()"> {{userfirstletter}}</li>
+                  <li style="color:white;">  {{userName | uppercase}}</li>
+                  <li  *ngIf="chating==true" class="round2"> o</li>
+                  <li  *ngIf="chating==false" class="round"> o</li>
+                  <p *ngIf="chating==true" style="margin-left:150px;color:grren">Online</p>
+                  <p *ngIf="chating==false"  class="offline">Offline</p>
+              </ul>
+                 
+                   
+                   
+                 
+          </div>
+          
+      </div>
+  </div>
+  
+  <div class="container chat-boxs">
+    <div #scrollMe [scrollTop]="(scrollToChatTop)?0:scrollMe.scrollHeight" class="chat-history">
+    <div class="row"  *ngFor="let messages of finallist">
+  
+
+            <div class="col-md-12">
+                    
+               <div class="chats">
+                   
+                   <div class="my-details">
+                      
+                        <p *ngIf="messages.senderId==receiverId" class="friend-name">{{messages.senderName}} {{messages.createdOn|date}}</p>
+                        
+                  <p *ngIf="messages.senderId==receiverId" style="color:red;text-align:left;" class="friend-message">{{messages.message}}</p>
+                
+                  <p *ngIf="messages.senderId==userId && messages.receiverId==receiverId" class="name">{{firstName}} {{lastName}}
+ {{messages.createdOn|date}}
+                  </p>
+                
+                  <p *ngIf="messages.senderId==userId && messages.receiverId==receiverId" style="color:blue;text-align:right;">{{messages.message}}</p>
+                
+                                     
+                  </div>
+               </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+                <div class="row">
+                        <div class="col-md-2">
+        
+                        </div>
+                        <div class="col-md-8" class="send">
+                                <input type="text" name="message" [(ngModel)]="message">
+                                <button class="btn btn-primary" (click)="sendmessage()">send</button>
+                            </div>
+                            <div class="col-md-2">
+                            
+                                </div>
+                  
+                    
+                </div>
+            </div>
+          
+        </div>
+</div>
+
