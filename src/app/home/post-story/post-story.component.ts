@@ -27,6 +27,7 @@ export class PostStoryComponent implements OnInit {
   comments: any;
   commentlength: any;
   authToken: string;
+  signuploader: boolean;
 
   constructor(public socketService:SocketServiceService,public service:ServiceService,public route:Router,public _router:ActivatedRoute,public toastr: ToastrService) { }
 
@@ -71,10 +72,12 @@ reader.readAsDataURL(this.file)
  //post image code start
  
  public postimage=()=>{
+
    if(!this.imageTitle) {
      alert('please provide imageTitle')
    }
    else {
+    this.signuploader=false;
    let data={
      userId:this.userId,
      type:'image',
@@ -84,10 +87,12 @@ reader.readAsDataURL(this.file)
    }
    this.service.postImage(data).subscribe(
      data=>{
+      this.signuploader=true;
        this.toastr.success(data.message);
        this.getstories();
        this.imageTitle='';
      },err=>{
+      this.signuploader=true;
        this.toastr.error('File Too Large');
      }
    )

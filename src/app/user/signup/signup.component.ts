@@ -33,8 +33,14 @@ export class SignupComponent implements OnInit {
     }
    this.service.signup(data).subscribe(
      data=>{
+      if(data.error==true){
+        this.signuploader=true;
+        this.toastr.error(data.message)
+      }
+      else{
       this.signuploader=true;
       this.toastr.success(data.message);
+      }
      },
      err=>{
       this.signuploader=true;
